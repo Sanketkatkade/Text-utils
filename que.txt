@@ -1,0 +1,71 @@
+1) What is ReactJs?
+
+    ReactJS is a popular JavaScript library used for building user interfaces, especially for single-page applications. It helps developers create reusable UI components, making the code more organized and easier to maintain. React is fast because it uses a virtual DOM to update only the parts of the web page that need changes, instead of reloading the entire page.
+
+    The Virtual DOM is a lightweight copy of the real DOM (Document Object Model). Instead of directly updating the real DOM when something changes, React first updates the virtual DOM. Then, it compares the virtual DOM with the previous version to find out what exactly changed. Finally, it updates only the changed parts in the real DOM.
+
+2) What is JSX?
+
+    JSX (JavaScript XML) is a syntax extension for JavaScript used in React. It allows us to write HTML-like code directly inside JavaScript. JSX makes it easier to create and structure React components by combining HTML and JavaScript logic in one place.
+
+    For example:
+
+    const element = <h1>Hello, world!</h1>;
+    This JSX code is converted into regular JavaScript during the build process, like:
+
+    const element = React.createElement('h1', null, 'Hello, world!');
+
+3) Is JSX mandatory for React?
+
+    Answer: No, JSX is not mandatory. React can work without JSX by using plain JavaScript and the React.createElement method. However, JSX makes the code more readable and concise.
+
+4) What are the advantages of JSX?
+
+    Answer:
+    JSX improves readability by combining HTML and JavaScript logic in one place.
+    It provides better error handling with proper warnings.
+    JSX allows embedding expressions using {} for dynamic content.
+
+5) How is JSX different from HTML?
+
+    Answer: JSX looks like HTML but is not exactly the same:
+    JSX uses className instead of class for CSS classes.
+    Self-closing tags (like <img />) are mandatory for single tags.
+    JSX allows JavaScript expressions inside {}.
+
+6) What is props in React?
+
+    In simple words, props are a way to pass data from one component to another in React, typically from a parent component to a child component. It allows us to make our components reusable by giving them the ability to receive dynamic data.
+
+    Props are like function arguments: We pass them into a component, and the component uses them.
+    Props are read-only: A component cannot modify the props it receives.
+
+        Q) How do props work in React?
+
+            Props are passed from parent to child components and are read-only. The child component can access them but cannot modify them.
+
+
+        Q) Can props be modified in a child component?
+
+            No, props are immutable. They cannot be modified by the child component.
+
+        Q) What is the difference between props and state in React?
+
+            Props are used to pass data to components, while state is used to store data within a component. Props are immutable, but state can be modified.
+
+        Q) How would you pass a function as a prop in React?
+
+            You can pass a function as a prop to a child component just like any other data. The child component can then invoke the function.
+
+            function Parent() {
+                const handleClick = () => {
+                    console.log("Button clicked!");
+                };
+
+                return <Child onClick={handleClick} />;
+            }
+
+            function Child(props) {
+                return <button onClick={props.onClick}>Click Me</button>;
+            }
+            
