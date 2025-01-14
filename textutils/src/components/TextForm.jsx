@@ -49,16 +49,16 @@ export default function TextForm(props) {
           id="myBox"
           rows="8"
         ></textarea>
-        <button className="btn btn-primary" onClick={handleUpClick}>
+        <button className="btn btn-primary mx-1 my-1" onClick={handleUpClick}>
           Convert to UpperCase
         </button>
-        <button className="btn btn-primary m-3" onClick={handleLcClick}>
+        <button className="btn btn-primary mx-1 my-1" onClick={handleLcClick}>
           Convert to LowerCase
         </button>
-        <button className="btn btn-primary m-3" onClick={ClearAll}>
+        <button className="btn btn-primary mx-1 my-1" onClick={ClearAll}>
           Clear All
         </button>
-        <button className="btn btn-primary m-3" onClick={handleCopy}>
+        <button className="btn btn-primary mx-1 my-1" onClick={handleCopy}>
           Copy All
         </button>
       </div>
@@ -68,9 +68,9 @@ export default function TextForm(props) {
       >
         <h2>Your Text Summary</h2>
         <p>
-          {text.split(" ").length} words and {text.length} character
+          {text.split(" ").filter((element) => {return element.length !== 0}).length} words and {text.length} character
         </p>
-        <p>{0.008 * text.split(" ").length} min to read</p>
+        <p>{0.008 * text.split(" ").filter((element) => {return element.length != 0}).length} min to read</p>
         <h2>Preview</h2>
         <p>
           {text.length > 0
